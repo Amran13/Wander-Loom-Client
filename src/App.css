@@ -3,4 +3,7 @@
   margin: 0 auto;
 }
 
-
+.fixed-slider{
+  height: 780px;
+  width: 100%;
+}

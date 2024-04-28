@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import img from '../../assets/Image/photo-1634985492349-8589a9255cbe.avif'
+import SectionHeading from '../Shared/SectionHeading';
 
 const CounriesTour = () => {
     const [countries, setCountries] = useState([])
@@ -8,9 +9,11 @@ const CounriesTour = () => {
         .then(res => res.json())
         .then(data => setCountries(data))
     } ,[])
+    const heading = `Travel Around Europe`
+    const text = `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, facilis.`
     return (
-        <div>
-            <h2 className='text-center font-bold text-3xl'>Tourist Spots {countries.length} </h2>
+        <div className='mb-24'>
+            <SectionHeading heading={heading} text={text} ></SectionHeading>
             <div className='grid grid-cols-3 gap-6'>
                 {
                     countries.map(country => <div key={country._id} className="card w-96 bg-base-100 shadow-xl">

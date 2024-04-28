@@ -9,10 +9,11 @@ const TouristSpots = () => {
             .then(res => res.json())
             .then(data => setTouristSpots(data))
     }, [])
+    const heading = `Tourist Spots`
+    const text = `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, facilis.`
     return (
-        <div>
-            <SectionHeading></SectionHeading>
-            <h2 className='text-center font-bold text-3xl'>Tourist Spots {touristSpots.length} </h2>
+        <div className='mb-24'>
+            <SectionHeading heading={heading} text={text}></SectionHeading>
             <div className='grid grid-cols-3 gap-6'>
                 {
                     touristSpots.map(spot => <div key={spot._id} className="card w-96 bg-base-100 shadow-xl">

@@ -1,23 +1,27 @@
 [
       {
+        "id" : 1,
         "icon": "https://example.com/icon1.png",
         "title": "Explore",
         "description": "Discover exciting destinations around the world and plan your next adventure.",
         "additional_info": "Browse travel guides, tips, and itineraries to make the most of your trip."
       },
       {
+        "id" : 2,
         "icon": "https://example.com/icon2.png",
         "title": "Discover",
         "description": "Uncover hidden gems and unique experiences off the beaten path.",
         "additional_info": "Find local attractions, restaurants, and activities for unforgettable memories."
       },
       {
+        "id" : 3,
         "icon": "https://example.com/icon3.png",
         "title": "Plan",
         "description": "Organize your travel itinerary, bookings, and travel essentials hassle-free.",
         "additional_info": "Get travel advice, packing tips, and tools to streamline your journey."
       },
       {
+        "id" : 4,
         "icon": "https://example.com/icon4.png",
         "title": "Enjoy",
         "description": "Relax and immerse yourself in new cultures, cuisines, and experiences.",

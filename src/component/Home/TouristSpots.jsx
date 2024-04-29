@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import img from '../../assets/Image/photo-1589193302643-3ee67ac58fc7.avif'
 import SectionHeading from '../Shared/SectionHeading';
+import { Link } from 'react-router-dom';
 
 const TouristSpots = () => {
     const [touristSpots, setTouristSpots] = useState([])
@@ -19,10 +20,12 @@ const TouristSpots = () => {
                     touristSpots.map(spot => <div key={spot._id} className="card w-96 bg-base-100 shadow-xl">
                         <figure><img src={img} alt="Shoes" /></figure>
                         <div className="card-body">
-                            <h2 className="card-title"> {spot.spot_name} </h2>
+                            <h2 className="card-title"> {spot.tourist_spot_name} </h2>
                             <p>If a dog chews shoes whose shoes does he choose?</p>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-primary">View Details</button>
+                                <Link to={`/tourist-spots/${spot._id}`}>
+                                    <button className="btn btn-primary">View Details</button>
+                                </Link>
                             </div>
                         </div>
                     </div>)

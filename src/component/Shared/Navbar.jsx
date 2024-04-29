@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     const navigationLink = <>
         <Link className='orange' to="/">Home</Link>
+        <Link className='orange' to="/all-tourist-spot">All Tourist Spot</Link>
+        <Link className='orange' to="/add-tourist-spot">Add Tourist Spot</Link>
+        <Link className='orange' to="/my-list">My List</Link>
         <Link className='orange' to="/login">Login</Link>
         <Link className='orange' to="/register">Register</Link>
     </>

@@ -1,0 +1,51 @@
+[
+      { "id" : 1,
+        "client_img": "https://i.ibb.co/PtZqwf4/photo-1633332755192-727a05c4013d-q-80-w-2080-auto-format-fit-crop-ixlib-rb-4-0.jpg",
+        "client_name": "Emily Johnson",
+        "profession": "Travel Blogger",
+        "review": "I had an amazing experience exploring the Eiffel Tower in Paris! The panoramic views from the top were breathtaking, and the ambiance at night was magical. Definitely a must-visit for anyone traveling to Paris."
+      },
+      {
+        "id" : 2,
+        "client_img": "https://i.ibb.co/PtZqwf4/photo-1633332755192-727a05c4013d-q-80-w-2080-auto-format-fit-crop-ixlib-rb-4-0.jpg",
+        "client_name": "Marco Rossi",
+        "profession": "Architect",
+        "review": "Visiting the Colosseum in Rome was a dream come true. The ancient architecture and history behind this iconic amphitheater are awe-inspiring. Highly recommend exploring this marvel of ancient Rome."
+      },
+      {
+        "id" : 3,
+        "client_img": "https://i.ibb.co/PtZqwf4/photo-1633332755192-727a05c4013d-q-80-w-2080-auto-format-fit-crop-ixlib-rb-4-0.jpg",
+        "client_name": "Sophie Miller",
+        "profession": "Art Enthusiast",
+        "review": "The Sagrada Família in Barcelona left me speechless! Gaudí's unique architectural style and the intricate details inside the basilica are simply stunning. A must-see for art and architecture lovers."
+      },
+      {
+        "id" : 4,
+        "client_img": "https://i.ibb.co/PtZqwf4/photo-1633332755192-727a05c4013d-q-80-w-2080-auto-format-fit-crop-ixlib-rb-4-0.jpg",
+        "client_name": "David Smith",
+        "profession": "History Buff",
+        "review": "Exploring the Tower of London was like stepping back in time. The Yeoman Warders' guided tour was informative, and seeing the Crown Jewels up close was a highlight of my trip to London."
+      },
+      {
+        "id" : 5,
+        "client_img": "https://i.ibb.co/PtZqwf4/photo-1633332755192-727a05c4013d-q-80-w-2080-auto-format-fit-crop-ixlib-rb-4-0.jpg",
+        "client_name": "Linda Nguyen",
+        "profession": "Nature Photographer",
+        "review": "Keukenhof Gardens in the Netherlands is a paradise of blooming flowers! The vibrant tulip displays and scenic landscapes are perfect for photography enthusiasts. A must-visit during springtime."
+      },
+      {
+        "id" : 6,
+        "client_img": "https://i.ibb.co/PtZqwf4/photo-1633332755192-727a05c4013d-q-80-w-2080-auto-format-fit-crop-ixlib-rb-4-0.jpg",
+        "client_name": "Alex Fischer",
+        "profession": "Adventure Seeker",
+        "review": "Jungfraujoch offered the most breathtaking views of the Swiss Alps! Skiing on the slopes and exploring the Ice Palace made it an unforgettable experience. Truly the 'Top of Europe.'"
+      },
+      {
+        "id" : 7,
+        "client_img": "https://i.ibb.co/PtZqwf4/photo-1633332755192-727a05c4013d-q-80-w-2080-auto-format-fit-crop-ixlib-rb-4-0.jpg",
+        "client_name": "Isabella Martinez",
+        "profession": "Travel Enthusiast",
+        "review": "I've visited many places, but nothing compares to the beauty of Europe's top tourist spots. Each destination was unique and left a lasting impression. Can't wait to plan my next European adventure!"
+      }
+]
+  

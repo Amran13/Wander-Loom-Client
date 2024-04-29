@@ -9,6 +9,7 @@ import AddTouristSpot from "./AddTouristSpot/AddTouristSpot";
 import MyListPage from "./MyList/MyListPage";
 import AllTouristSpot from "./AllTouristSpot/AllTouristSpot";
 import AddedSpotsDetails from "./ViewDetails/AddedSpotsDetails";
+import Private from "./Protected/Private";
 
 const router = createBrowserRouter([
     {
@@ -27,21 +28,21 @@ const router = createBrowserRouter([
             },
             {
                 path: '/all-tourist-spot',
-                element: <AllTouristSpot />,
+                element: <Private> <AllTouristSpot /></Private>,
                 loader: () => fetch(`http://localhost:5000/add-tourist-spot`)
             },
             {
                 path: '/all-tourist-spot/:id',
-                element: <AddedSpotsDetails />,
+                element: <Private> <AddedSpotsDetails /></Private>,
                 loader: ({params}) => fetch(`http://localhost:5000/add-tourist-spot/${params.id}`)
             },
             {
                 path: 'add-tourist-spot',
-                element: <AddTouristSpot />,
+                element: <Private> <AddTouristSpot/> </Private>,
             },
             {
                 path : '/my-list',
-                element : <MyListPage></MyListPage>,
+                element : <Private> <MyListPage></MyListPage> </Private>,
                 loader : () => fetch('http://localhost:5000/add-tourist-spot')
             },
             {

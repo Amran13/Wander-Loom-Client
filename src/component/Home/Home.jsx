@@ -4,6 +4,8 @@ import Header from './Header';
 import TouristSpots from './TouristSpots';
 import CounriesTour from './CounriesTour';
 import CardSection from './CardSection';
+import Reviews from './Reviews';
+import Faq from './Faq';
 
 const Home = () => {
     return (
@@ -13,7 +15,8 @@ const Home = () => {
             <TouristSpots></TouristSpots>
             <Slider></Slider>
             <CounriesTour></CounriesTour>
-
+            <Reviews></Reviews>
+            <Faq></Faq>
         </div>
     );
 };

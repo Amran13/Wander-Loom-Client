@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import img from '../../assets/Image/photo-1589193302643-3ee67ac58fc7.avif'
 import SectionHeading from '../Shared/SectionHeading';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const TouristSpots = () => {
     const [touristSpots, setTouristSpots] = useState([])
+
     useEffect(() => {
         fetch('http://localhost:5000/tourist-spots')
             .then(res => res.json())

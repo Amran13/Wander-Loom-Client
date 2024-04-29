@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/Image/login.svg'
+import Swal from 'sweetalert2';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext)
     const handleRegister = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -10,7 +13,24 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, email, password)
-        
+        createUser(email, password)
+            .then(res => {
+                if (res.user) {
+                    console.log('inside registed', res.user)
+                    Swal.fire({
+                        title: "Registered User!",
+                        text: "This item has already added to the cart!",
+                        icon: "success"
+                    });
+                }
+            })
+            .catch(err => {
+                Swal.fire({
+                    title: "Oops!",
+                    text: err,
+                    icon: "error"
+                });
+            })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -40,7 +60,7 @@ const Register = () => {
                             <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn bg-orange-500 hover:bg-orange-600">Register</button>
+                            <button className="btn">Register</button>
                         </div>
                         <span className='mt-4'>Already have an account? <Link className='orange' to="/login">LOGIN</Link> </span>
                     </form>

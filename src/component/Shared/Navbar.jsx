@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
+    const {user, logOut} = useContext(AuthContext)
     const navigationLink = <>
         <Link className='orange' to="/">Home</Link>
         <Link className='orange' to="/all-tourist-spot">All Tourist Spot</Link>
         <Link className='orange' to="/add-tourist-spot">Add Tourist Spot</Link>
         <Link className='orange' to="/my-list">My List</Link>
-        <Link className='orange' to="/login">Login</Link>
-        <Link className='orange' to="/register">Register</Link>
     </>
+
+    const handleLogOut = () => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+                logOut()
+                .then(res => {
+                    console.log('inside logOut', res)
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                      });
+                })
+            }
+          });
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -29,7 +54,11 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                {
+                    user ? <button onClick={handleLogOut} className='btn'>LogOut</button> : <Link to="/login" className='btn'>Login</Link>
+                }
+                
+                
             </div>
         </div>
     );

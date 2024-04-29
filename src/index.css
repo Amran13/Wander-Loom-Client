@@ -19,13 +19,13 @@
 
 .orange{
   font-weight: 500;
-  color: orangered;
+  color: #5e03fc;
   text-decoration: inherit;
   margin: 0 20px;
 }
 
 .orange:hover {
-  color: red;
+  color: #7703fc;
   text-decoration: underline;
 }
 
@@ -48,13 +48,12 @@ h1 {
   color: white;
   font-weight: 500;
   font-family: inherit;
-  background-color: orangered;
+  background-color: #5e03fc;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 .btn:hover {
-  background-color: red;
-  color: black;
+  background-color: #7703fc;
 }
 button:focus,
 button:focus-visible {
@@ -66,9 +65,7 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: red;
-  }
+  
   button {
     background-color: #f9f9f9;
   }

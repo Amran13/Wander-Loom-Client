@@ -17,7 +17,7 @@ const TouristSpots = () => {
     return (
         <div className='mb-24'>
             <SectionHeading heading={heading} text={text}></SectionHeading>
-            <div className='grid grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
                     touristSpots.map(spot => <div key={spot._id} className="card w-96 bg-base-100 shadow-xl">
                         <figure><img src={img} alt="Shoes" /></figure>

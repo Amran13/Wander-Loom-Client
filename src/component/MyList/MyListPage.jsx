@@ -43,8 +43,6 @@ const MyListPage = () => {
     return (
         <div>
             <div className="overflow-x-auto w-full">
-                <table className="table w-2/3 mx-auto">
-                    <tbody>
                         <div className='my-12'>
                             {
                                 addedData.length ? <div className='text-center font-bold text-3xl'>You have selected <span className='text-4xl text-violet-500'>{addedData.length}</span> spot </div>
@@ -55,6 +53,8 @@ const MyListPage = () => {
                                     </div>
                             }
                         </div>
+                <table className="table md:w-2/3 mx-auto">
+                    <tbody>
                         {
                             addedData.map(data => <tr key={data._id}>
                                 <td>
@@ -75,8 +75,8 @@ const MyListPage = () => {
                                     <br />
                                     <span className="badge badge-ghost badge-sm"> {data.location}  </span>
                                 </td>
-                                <td> {data.avarageCost} </td>
-                                <th>
+                                <td>  {data.avarageCost}$ </td>
+                                <th className='lg:space-x-2 space-y-2'>
                                     <button onClick={() => handleDelete(data._id)} className="btn">
                                         <AiFillDelete />
                                     </button>

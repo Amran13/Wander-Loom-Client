@@ -12,10 +12,10 @@ const Faq = () => {
     return (
         <div>
             <SectionHeading heading={`FAQ`} text={`lorem ipsum`} ></SectionHeading>
-            <div className='flex'>
-                <div className='w-1/2'>
+            <div className='flex flex-col-reverse lg:flex-row '>
+                <div className='lg:w-1/2'>
                     {
-                        questions.map(question => <div className="collapse collapse-plus my-4 bg-base-200">
+                        questions.map(question => <div key={question.id} className="collapse collapse-plus my-4 bg-base-200">
                             <input type="radio" name="my-accordion-3" defaultChecked />
                             <div className="collapse-title text-xl font-medium">
                                 {question.question}
@@ -27,7 +27,7 @@ const Faq = () => {
                     }
 
                 </div>
-                <div className='w-1/2'>
+                <div className='lg:w-1/2'>
                     <img className='w-full' src={img} alt="" />
                 </div>
             </div>

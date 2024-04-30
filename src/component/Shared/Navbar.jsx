@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Navbar = () => {
-    const {user, logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     const navigationLink = <>
-        <Link className='orange' to="/">Home</Link>
-        <Link className='orange' to="/all-tourist-spot">All Tourist Spot</Link>
-        <Link className='orange' to="/add-tourist-spot">Add Tourist Spot</Link>
-        <Link className='orange' to="/my-list">My List</Link>
+        <NavLink to="/" className={({ isActive }) => isActive ? 'text-violet-500 font-bold underline mx-4' : 'mx-4'}>Home</NavLink>
+        <NavLink to="/all-tourist-spot" className={({ isActive }) => isActive ? 'text-violet-500 font-bold mx-4 underline' : 'mx-4'}>All Tourist Spot</NavLink>
+        <NavLink to="/add-tourist-spot" className={({ isActive }) => isActive ? 'text-violet-500 orange font-bold mx-4 underline' : 'mx-4'}>Add Tourist Spot</NavLink>
+        <NavLink to="/my-list" className={({ isActive }) => isActive ? 'text-violet-500 font-bold underline mx-4' : 'mx-4'}>My List</NavLink>
+        
     </>
 
     const handleLogOut = () => {
@@ -21,19 +22,19 @@ const Navbar = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
                 logOut()
-                .then(res => {
-                    console.log('inside logOut', res)
-                    Swal.fire({
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        icon: "success"
-                      });
-                })
+                    .then(res => {
+                        console.log('inside logOut', res)
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+                    })
             }
-          });
+        });
     }
     return (
         <div className="navbar bg-base-100">
@@ -57,8 +58,8 @@ const Navbar = () => {
                 {
                     user ? <button onClick={handleLogOut} className='btn'>LogOut</button> : <Link to="/login" className='btn'>Login</Link>
                 }
-                
-                
+
+
             </div>
         </div>
     );

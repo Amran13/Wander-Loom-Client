@@ -10,7 +10,7 @@ const CountryWise = () => {
             <SectionHeading heading={`Spots of ${countrySpots.country_name}`} text={`There are ${countrySpots.spots.length} spots you can visit`}></SectionHeading>
             <div className='grid grid-cols-3 gap-6 my-12'>
                 {
-                    countrySpots.spots.map(spot => <div className="card w-96 bg-base-100 shadow-xl">
+                    countrySpots.spots.map(spot => <div key={countrySpots.spots.indexOf(spot)} className="card w-96 bg-base-100 shadow-xl">
                     <figure><img src={img} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title"> {spot.tourist_spot_name} </h2>

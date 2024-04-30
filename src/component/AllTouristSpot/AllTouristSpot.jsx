@@ -15,9 +15,9 @@ const AllTouristSpot = () => {
                         <div className='text-lg text-violet-800 text-center hover:font-medium hover:underline '><Link to="/add-tourist-spot">Add Tourist Spot</Link></div>
                     </div>
             }
-            <div className='grid grid-cols-3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
-                    spots.map(spot => <div key={spot._id} className="card w-96 bg-base-100 shadow-xl">
+                    spots.map(spot => <div key={spot._id} className="card lg:w-96 bg-base-100 shadow-xl">
                         <figure><img src={spot.image} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title"> {spot.touristSpot} </h2>

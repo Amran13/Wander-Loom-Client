@@ -19,13 +19,11 @@
 
 .orange{
   font-weight: 500;
-  color: #5e03fc;
   text-decoration: inherit;
   margin: 0 20px;
 }
 
 .orange:hover {
-  color: #7703fc;
   text-decoration: underline;
 }
 

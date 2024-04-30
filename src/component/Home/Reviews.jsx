@@ -23,11 +23,11 @@ const Reviews = () => {
     return (
         <div>
             <SectionHeading heading={`Our Clients Review`} text={`lorem ipsum dolot hello world`}></SectionHeading>
-            <div className='flex w-full'>
-                <div className='w-2/5 flex justify-center items-center'>
+            <div className='flex lg:flex-row flex-col w-full'>
+                <div className='lg:w-2/5 flex justify-center items-center'>
                     <img className='w-full' src={img} alt="" />
                 </div>
-                <div className='w-3/5'>
+                <div className='lg:w-3/5'>
                     <Swiper
                         effect={'coverflow'}
                         grabCursor={true}

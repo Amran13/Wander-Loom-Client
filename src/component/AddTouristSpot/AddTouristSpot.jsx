@@ -36,7 +36,7 @@ const AddTouristSpot = () => {
                     text: "You clicked the button!",
                     icon: "success"
                   });
-                  navigate('/my-list')
+                //   navigate('/my-list')
                 
             }
         })
@@ -45,19 +45,19 @@ const AddTouristSpot = () => {
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold"> Add Your Tourist Place </h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <h1 className="lg:text-5xl text-3xl font-bold"> Add Your Tourist Place </h1>
+                    <p className="lg:py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                 </div>
-                <div className="card shrink-0 w-full shadow-2xl bg-base-100">
+                <div className="card shrink-0 lg:w-full shadow-2xl bg-base-100">
                     <form onSubmit={handleAddTouristSpot} className="card-body">
-                        <div className='flex w-full gap-6'>
-                            <div className="form-control w-1/2">
+                        <div className='flex md:flex-row flex-col w-full md:gap-6'>
+                            <div className="form-control md:w-1/2">
                                 <label className="label">
                                     <span className="label-text">User Name</span>
                                 </label>
                                 <input type="text" name='userName' placeholder="Type your name" className="input input-bordered" required />
                             </div>
-                            <div className="form-control w-1/2">
+                            <div className="form-control md:w-1/2">
                                 <label className="label">
                                     <span className="label-text">User Email</span>
                                 </label>
@@ -65,14 +65,14 @@ const AddTouristSpot = () => {
                             </div>
                         </div>
 
-                        <div className='flex w-full gap-6'>
-                            <div className="form-control w-1/2">
+                        <div className='flex w-full md:flex-row flex-col md:gap-6'>
+                            <div className="form-control md:w-1/2">
                                 <label className="label">
                                     <span className="label-text">Tourist Spot</span>
                                 </label>
                                 <input type="text" name='touristSpot' placeholder="Spot Name" className="input input-bordered" required />
                             </div>
-                            <div className="form-control w-1/2">
+                            <div className="form-control md:w-1/2">
                                 <label className="label">
                                     <span className="label-text">Country</span>
                                 </label>
@@ -80,14 +80,14 @@ const AddTouristSpot = () => {
                             </div>
                         </div>
 
-                        <div className='flex w-full gap-6'>
-                            <div className="form-control w-1/2">
+                        <div className='flex md:flex-row flex-col w-full md:gap-6'>
+                            <div className="form-control md:w-1/2">
                                 <label className="label">
                                     <span className="label-text">Avarage Cost</span>
                                 </label>
                                 <input type="text" placeholder="Cost" name='avarageCost' className="input input-bordered" required />
                             </div>
-                            <div className="form-control w-1/2">
+                            <div className="form-control md:w-1/2">
                                 <label className="label">
                                     <span className="label-text">Seasonality</span>
                                 </label>
@@ -95,14 +95,14 @@ const AddTouristSpot = () => {
                             </div>
                         </div>
 
-                        <div className='flex w-full gap-6'>
-                            <div className="form-control w-1/2">
+                        <div className='flex md:flex-row flex-col w-full md:gap-6'>
+                            <div className="form-control md:w-1/2 w-full">
                                 <label className="label">
                                     <span className="label-text">Travel Time</span>
                                 </label>
                                 <input type="text" placeholder="How much time it takes?" name='travelTime' className="input input-bordered" required />
                             </div>
-                            <div className="form-control w-1/2">
+                            <div className="form-control md:w-1/2">
                                 <label className="label">
                                     <span className="label-text">Total Visitors</span>
                                 </label>

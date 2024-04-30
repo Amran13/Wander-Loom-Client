@@ -34,11 +34,11 @@ const Register = () => {
     }
     return (
         <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row">
-                <div className="w-1/2 mr-24">
+            <div className="hero-content flex-col md:flex-row">
+                <div className="w-1/2 lg:mr-24">
                     <img className='w-full' src={img} alt="" />
                 </div>
-                <div className="card shrink-0 w-1/2 max-w-lg shadow-2xl bg-base-100">
+                <div className="card shrink-0 md:w-1/2 max-w-lg shadow-2xl bg-base-100">
                     <form onSubmit={handleRegister} className="card-body">
                         <h1 className="text-3xl text-center font-bold">Register</h1>
                         <div className="form-control">

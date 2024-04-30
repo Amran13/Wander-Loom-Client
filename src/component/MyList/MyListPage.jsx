@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AiFillDelete } from "react-icons/ai";
 import { IoIosCreate } from "react-icons/io";
-
+import img from '../../assets/Image/undraw_Add_tasks_re_s5yj.png'
 
 
 const MyListPage = () => {
@@ -11,6 +11,7 @@ const MyListPage = () => {
     const [addedData, setAddedData] = useState(loadedData)
     // console.log(loadedData.length, addedData.length)
     const handleDelete = (id) => {
+
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -44,6 +45,16 @@ const MyListPage = () => {
             <div className="overflow-x-auto w-full">
                 <table className="table w-2/3 mx-auto">
                     <tbody>
+                        <div className='my-12'>
+                            {
+                                addedData.length ? <div className='text-center font-bold text-3xl'>You have selected <span className='text-4xl text-violet-500'>{addedData.length}</span> spot </div>
+                                    : <div>
+                                        <img className='w-4/5 mx-auto' src={img} alt="" />
+                                        <div className='text-center font-bold text-3xl'>Please Select Some Spot  </div>
+                                        <div className='text-lg text-violet-800 text-center hover:font-medium hover:underline '><Link to="/add-tourist-spot">Add Tourist Spot</Link></div>
+                                    </div>
+                            }
+                        </div>
                         {
                             addedData.map(data => <tr key={data._id}>
                                 <td>
@@ -60,7 +71,7 @@ const MyListPage = () => {
                                     </div>
                                 </td>
                                 <td>
-                                {data.touristSpot}
+                                    {data.touristSpot}
                                     <br />
                                     <span className="badge badge-ghost badge-sm"> {data.location}  </span>
                                 </td>

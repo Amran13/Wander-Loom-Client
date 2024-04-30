@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const AddTouristSpot = () => {
+    const navigate = useNavigate()
     const handleAddTouristSpot = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -34,6 +36,8 @@ const AddTouristSpot = () => {
                     text: "You clicked the button!",
                     icon: "success"
                   });
+                  navigate('/my-list')
+                
             }
         })
     }

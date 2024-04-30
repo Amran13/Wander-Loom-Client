@@ -10,6 +10,7 @@ import MyListPage from "./MyList/MyListPage";
 import AllTouristSpot from "./AllTouristSpot/AllTouristSpot";
 import AddedSpotsDetails from "./ViewDetails/AddedSpotsDetails";
 import Private from "./Protected/Private";
+import CountryWise from "./CountryWise/CountryWise";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
                 path: '/tourist-spots/:id',
                 element: <TouristSpotsDetails />,
                 loader: ({ params }) => fetch(`http://localhost:5000/tourist-spots/${params.id}`)
+            },
+            {
+                path: '/countries-tour/:id',
+                element: <CountryWise />,
+                loader: ({ params }) => fetch(`http://localhost:5000/countries-tour/${params.id}`)
             },
             {
                 path: '/all-tourist-spot',

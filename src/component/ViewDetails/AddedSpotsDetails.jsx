@@ -1,23 +1,28 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import SectionHeading from '../Shared/SectionHeading';
+
 
 const AddedSpotsDetails = () => {
-    const { userName, userEmail, touristSpot, country, avarageCost, seasonality, travelTime, totalVisitors, image, location, description } =  useLoaderData();
+    const { userName, userEmail, touristSpot, country, avarageCost, seasonality, travelTime, totalVisitors, image, location, description } = useLoaderData();
     return (
         <div>
-            <img src={image} alt="" />
-            <h2 className='text-4xl font-bold'> {touristSpot} </h2>
-            <h3 className='text-2xl'> {country} </h3>
-            <p> {location} </p>
-            {/* <p> {short_description} </p> */}
-            <div>
-                <h3>Addtional Info</h3>
-                <p> {avarageCost} </p>
-                <p> {seasonality} </p>
-                <p> {travelTime} </p>
-                <p> {totalVisitors} </p>
+            <SectionHeading heading={`Details of ${touristSpot}`} text={location}></SectionHeading>
+            <div className=''>
+                <img className=' mx-auto' src={image} alt="" />
             </div>
-            <p> {description} </p>
+            <div className='my-8 space-y-4 p-4'>
+                <h2 className='text-4xl font-bold'> {touristSpot} </h2>
+                <p> {location} </p>
+                <div>
+                    <h3 className='font-bold'>Addtional Info</h3>
+                    <p> <span className='font-medium'>Avarage Cost :</span>  {avarageCost} </p>
+                    <p> <span  className='font-medium'> Best Season To Travel : </span>  {seasonality} </p>
+                    <p> <span className='font-medium'>Travel Time :</span>  {travelTime} </p>
+                    <p> <span className='font-medium'>Total Visitors :</span> {totalVisitors} </p>
+                </div>
+                <p> <span className='font-semibold'>Descriptions :</span> {description} </p>
+            </div>
         </div>
     );
 };

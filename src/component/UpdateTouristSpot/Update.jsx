@@ -1,7 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Update = () => {
+    const navigate = useNavigate()
     const spot = useLoaderData()
     console.log(spot)
     const { averageCost,
@@ -41,7 +43,14 @@ const Update = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            if(data.modifiedCount){
+                Swal.fire({
+                    title: "Updated!",
+                    text: "Spot has been updated!",
+                    icon: "success"
+                  });
+                  navigate('/my-list')
+            }
         })
 
     }

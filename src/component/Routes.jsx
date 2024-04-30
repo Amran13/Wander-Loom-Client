@@ -11,6 +11,7 @@ import AllTouristSpot from "./AllTouristSpot/AllTouristSpot";
 import AddedSpotsDetails from "./ViewDetails/AddedSpotsDetails";
 import Private from "./Protected/Private";
 import CountryWise from "./CountryWise/CountryWise";
+import Update from "./UpdateTouristSpot/Update";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
                 path: '/all-tourist-spot',
                 element: <Private> <AllTouristSpot /></Private>,
                 loader: () => fetch(`http://localhost:5000/add-tourist-spot`)
+            },
+            {
+                path: '/update/:id',
+                element: <Private> <Update></Update> </Private>,
+                loader: ({params}) => fetch(`http://localhost:5000/add-tourist-spot/${params.id}`)
             },
             {
                 path: '/all-tourist-spot/:id',

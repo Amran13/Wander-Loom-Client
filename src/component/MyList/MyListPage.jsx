@@ -10,6 +10,7 @@ const MyListPage = () => {
     const loadedData = useLoaderData()
     const [addedData, setAddedData] = useState(loadedData)
     // console.log(loadedData.length, addedData.length)
+
     const handleDelete = (id) => {
 
         Swal.fire({
@@ -43,16 +44,16 @@ const MyListPage = () => {
     return (
         <div>
             <div className="overflow-x-auto w-full">
-                        <div className='my-12'>
-                            {
-                                addedData.length ? <div className='text-center font-bold text-3xl'>You have selected <span className='text-4xl text-violet-500'>{addedData.length}</span> spot </div>
-                                    : <div>
-                                        <img className='w-4/5 mx-auto' src={img} alt="" />
-                                        <div className='text-center font-bold text-3xl'>Please Select Some Spot  </div>
-                                        <div className='text-lg text-violet-800 text-center hover:font-medium hover:underline '><Link to="/add-tourist-spot">Add Tourist Spot</Link></div>
-                                    </div>
-                            }
-                        </div>
+                <div className='my-12'>
+                    {
+                        addedData.length ? <div className='text-center font-bold text-3xl'>You have selected <span className='text-4xl text-violet-500'>{addedData.length}</span> spot </div>
+                            : <div>
+                                <img className='w-4/5 mx-auto' src={img} alt="" />
+                                <div className='text-center font-bold text-3xl'>Please Select Some Spot  </div>
+                                <div className='text-lg text-violet-800 text-center hover:font-medium hover:underline '><Link to="/add-tourist-spot">Add Tourist Spot</Link></div>
+                            </div>
+                    }
+                </div>
                 <table className="table md:w-2/3 mx-auto">
                     <tbody>
                         {
@@ -80,9 +81,9 @@ const MyListPage = () => {
                                     <button onClick={() => handleDelete(data._id)} className="btn">
                                         <AiFillDelete />
                                     </button>
-                                    <button className="btn">
+                                    <Link to={`/update/${data._id}`}><button className="btn">
                                         <IoIosCreate />
-                                    </button>
+                                    </button></Link>
                                 </th>
                             </tr>)
                         }

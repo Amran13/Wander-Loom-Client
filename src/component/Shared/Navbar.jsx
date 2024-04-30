@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
-
+import { FaUserCircle } from "react-icons/fa";
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
     const navigationLink = <>
@@ -10,7 +10,12 @@ const Navbar = () => {
         <NavLink to="/all-tourist-spot" className={({ isActive }) => isActive ? 'text-violet-500 font-bold mx-4 underline' : 'mx-4'}>All Tourist Spot</NavLink>
         <NavLink to="/add-tourist-spot" className={({ isActive }) => isActive ? 'text-violet-500 orange font-bold mx-4 underline' : 'mx-4'}>Add Tourist Spot</NavLink>
         <NavLink to="/my-list" className={({ isActive }) => isActive ? 'text-violet-500 font-bold underline mx-4' : 'mx-4'}>My List</NavLink>
-        
+        {
+            user ? '' : <>
+                <NavLink to="/login" className={({ isActive }) => isActive ? 'text-violet-500 font-bold underline mx-4' : 'mx-4'}> Login </NavLink>
+                <NavLink to="/register" className={({ isActive }) => isActive ? 'text-violet-500 font-bold underline mx-4' : 'mx-4'}>Register</NavLink>
+            </>
+        }
     </>
 
     const handleLogOut = () => {
@@ -47,7 +52,7 @@ const Navbar = () => {
                         {navigationLink}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <Link className='text-3xl font-bold' to="/">WanderLoom</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -56,7 +61,11 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user ? <button onClick={handleLogOut} className='btn'>LogOut</button> : <Link to="/login" className='btn'>Login</Link>
+                    user ? <div className='flex justify-center items-center gap-4'>
+                     <FaUserCircle className='w-8 hover:cursor-pointer h-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2' />
+                        <button onClick={handleLogOut} className='btn'>LogOut</button>
+                    </div> :
+                        <Link to="/login" className='btn'>Login</Link>
                 }
 
 

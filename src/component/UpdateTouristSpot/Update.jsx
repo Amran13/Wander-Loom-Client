@@ -34,24 +34,24 @@ const Update = () => {
         const description = form.description.value;
 
         const updatedTouristSpot = { userName, userEmail, touristSpot, country, avarageCost, seasonality, travelTime, totalVisitors, image, location, description }
-        fetch(`http://localhost:5000/add-tourist-spot/${_id}`, {
-            method : 'PUT',
-            headers : {
-                'content-type' : 'application/json'
+        fetch(`https://tourism-management-server-three-eosin.vercel.app/add-tourist-spot/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
             },
-            body : JSON.stringify(updatedTouristSpot)
+            body: JSON.stringify(updatedTouristSpot)
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.modifiedCount){
-                Swal.fire({
-                    title: "Updated!",
-                    text: "Spot has been updated!",
-                    icon: "success"
-                  });
-                  navigate('/my-list')
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        title: "Updated!",
+                        text: "Spot has been updated!",
+                        icon: "success"
+                    });
+                    navigate('/my-list')
+                }
+            })
 
     }
     return (

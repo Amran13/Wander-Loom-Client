@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const CounriesTour = () => {
     const [countries, setCountries] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/countries-tour')
+        fetch('https://tourism-management-server-three-eosin.vercel.app/countries-tour')
             .then(res => res.json())
             .then(data => setCountries(data))
     }, [])
@@ -18,7 +18,7 @@ const CounriesTour = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
                     countries.map(country => <div key={country._id} className="card w-96 bg-base-100 shadow-xl">
-                        <figure><img src={img} alt="Shoes" /></figure>
+                        <figure><img src={country.image_url} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title"> {country.country_name} </h2>
                             <p>If a dog chews shoes whose shoes does he choose?</p>

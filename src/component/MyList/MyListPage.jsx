@@ -23,7 +23,7 @@ const MyListPage = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/add-tourist-spot/${id}`, {
+                fetch(`https://tourism-management-server-three-eosin.vercel.app/add-tourist-spot/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

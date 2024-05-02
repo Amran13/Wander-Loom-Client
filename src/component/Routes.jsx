@@ -26,36 +26,36 @@ const router = createBrowserRouter([
             {
                 path: '/tourist-spots/:id',
                 element: <TouristSpotsDetails />,
-                loader: ({ params }) => fetch(`http://localhost:5000/tourist-spots/${params.id}`)
+                loader: ({ params }) => fetch(`https://tourism-management-server-three-eosin.vercel.app/tourist-spots/${params.id}`)
             },
             {
                 path: '/countries-tour/:id',
                 element: <CountryWise />,
-                loader: ({ params }) => fetch(`http://localhost:5000/countries-tour/${params.id}`)
+                loader: ({ params }) => fetch(`https://tourism-management-server-three-eosin.vercel.app/countries-tour/${params.id}`)
             },
             {
                 path: '/all-tourist-spot',
                 element: <Private> <AllTouristSpot /></Private>,
-                loader: () => fetch(`http://localhost:5000/add-tourist-spot`)
+                loader: () => fetch(`https://tourism-management-server-three-eosin.vercel.app/add-tourist-spot`)
             },
             {
                 path: '/update/:id',
                 element: <Private> <Update></Update> </Private>,
-                loader: ({params}) => fetch(`http://localhost:5000/add-tourist-spot/${params.id}`)
+                loader: ({ params }) => fetch(`https://tourism-management-server-three-eosin.vercel.app/add-tourist-spot/${params.id}`)
             },
             {
                 path: '/all-tourist-spot/:id',
                 element: <Private> <AddedSpotsDetails /></Private>,
-                loader: ({params}) => fetch(`http://localhost:5000/add-tourist-spot/${params.id}`)
+                loader: ({ params }) => fetch(`https://tourism-management-server-three-eosin.vercel.app/add-tourist-spot/${params.id}`)
             },
             {
                 path: 'add-tourist-spot',
-                element: <Private> <AddTouristSpot/> </Private>,
+                element: <Private> <AddTouristSpot /> </Private>,
             },
             {
-                path : '/my-list',
-                element : <Private> <MyListPage></MyListPage> </Private>,
-                loader : () => fetch('http://localhost:5000/add-tourist-spot')
+                path: '/my-list',
+                element: <Private> <MyListPage></MyListPage> </Private>,
+                loader: () => fetch('https://tourism-management-server-three-eosin.vercel.app/add-tourist-spot')
             },
             {
                 path: '/login',

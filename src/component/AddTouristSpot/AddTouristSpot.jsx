@@ -20,26 +20,26 @@ const AddTouristSpot = () => {
         const description = form.description.value;
 
         const newTouristSpot = { userName, userEmail, touristSpot, country, avarageCost, seasonality, travelTime, totalVisitors, image, location, description }
-        
-        fetch(`http://localhost:5000/add-tourist-spot`, {
-            method : "POST", 
-            headers : {
-                'content-type' : 'application/json'
+
+        fetch(`https://tourism-management-server-three-eosin.vercel.app/add-tourist-spot`, {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
             },
-            body : JSON.stringify(newTouristSpot)
+            body: JSON.stringify(newTouristSpot)
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.insertedId){
-                Swal.fire({
-                    title: "Good job!",
-                    text: "You clicked the button!",
-                    icon: "success"
-                  });
-                //   navigate('/my-list')
-                
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "You clicked the button!",
+                        icon: "success"
+                    });
+                    //   navigate('/my-list')
+
+                }
+            })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
